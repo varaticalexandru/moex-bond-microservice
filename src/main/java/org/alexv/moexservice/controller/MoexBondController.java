@@ -6,7 +6,6 @@ import org.alexv.moexservice.dto.BondsPricesDto;
 import org.alexv.moexservice.dto.FigiesDto;
 import org.alexv.moexservice.dto.TickersDto;
 import org.alexv.moexservice.service.BondService;
-import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

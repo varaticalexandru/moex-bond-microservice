@@ -1,6 +1,5 @@
 package org.alexv.moexservice.mapper.impl;
 
-import lombok.AllArgsConstructor;
 import org.alexv.moexservice.dto.BondPriceDto;
 import org.alexv.moexservice.dto.MoexBondDto;
 import org.alexv.moexservice.mapper.Mapper;
