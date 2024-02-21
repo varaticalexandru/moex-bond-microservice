@@ -1,5 +1,5 @@
 server:
-  port: 8005
+  port: 8001
 
 moex:
   bonds:
@@ -16,3 +16,22 @@ spring:
   cache:
     caffeine:
       spec: maximumSize=48, expireAfterAccess=1h
+
+resilience4j:
+  retry:
+    instances:
+      bond-retry:
+        max-attempts: 5
+        wait-duration: 2s
+
+  circuitbreaker:
+    instances:
+      bond-breaker:
+        sliding-window-type: count_based
+        sliding-window-size: 5
+        minimum-number-of-calls: 5
+        failure-rate-threshold: 75
+        wait-duration-in-open-state: 10s
+        automatic-transition-from-open-to-half-open-enabled:
+        max-wait-duration-in-half-open-state: 5s
+        permitted-number-of-calls-in-half-open-state: 2
